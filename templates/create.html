@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Новая карточка{% endblock %}
+
+{% block content %}
+    <div class="create-container">
+        <div class="create-icon">💡</div>
+
+        <form method="POST" action="{{ url_for('form_create') }}" class="create-form">
+            <input type="text" name="title" placeholder="Введите заголовок" required>
+            <input type="text" name="subtitle" placeholder="Введите подзаголовок">
+            <textarea name="text" rows="6" placeholder="Напишите что-нибудь..." required></textarea>
+
+            <div class="create-actions">
+                <a href="{{ url_for('index') }}" class="btn btn-secondary">← Назад</a>
+                <button type="submit" class="btn btn-primary">Создать</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

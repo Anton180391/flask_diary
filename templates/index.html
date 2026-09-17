@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Мои записи{% endblock %}
+
+{% block content %}
+    <div class="index-container">
+        <header class="index-header">
+            <h1>Мои записи</h1>
+            <div class="user-info">
+                <span>👤 {{ current_user.username }}</span>
+                <a href="{{ url_for('logout') }}" class="btn-logout">Выйти</a>
+            </div>
+        </header>
+
+        <div class="cards-grid">
+            {% for card in cards %}
+                <a href="{{ url_for('card', id=card.id) }}" class="card">
+                    <div class="card-icon">💡</div>
+                    <h3 class="card-title">{{ card.title }}</h3>
+                    {% if card.subtitle %}
+                        <p class="card-subtitle">{{ card.subtitle }}</p>
+                    {% endif %}
+                </a>
+            {% endfor %}
+
+            <a href="{{ url_for('create') }}" class="card card-create">
+                <div class="card-plus">+</div>
+            </a>
+        </div>
+    </div>
+{% endblock %}

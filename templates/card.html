@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ card.title }}{% endblock %}
+
+{% block content %}
+    <div class="card-view-container">
+        <a href="{{ url_for('index') }}" class="btn-back">← Назад</a>
+
+        <div class="card-view">
+            <div class="card-view-icon">💡</div>
+            <h1>{{ card.title }}</h1>
+            {% if card.subtitle %}
+                <h2 class="card-view-subtitle">{{ card.subtitle }}</h2>
+            {% endif %}
+            <hr>
+            <p class="card-view-text">{{ card.text }}</p>
+        </div>
+    </div>
+{% endblock %}

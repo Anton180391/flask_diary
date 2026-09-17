@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+    <div class="auth-container">
+        <div class="auth-icon">📝</div>
+        <h2>Регистрация</h2>
+
+        <form method="POST" action="{{ url_for('register') }}" class="auth-form">
+            <label for="username">Логин</label>
+            <input type="text" id="username" name="username" placeholder="Придумайте логин" required>
+
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" placeholder="Придумайте пароль" required>
+
+            <button type="submit" class="btn btn-primary btn-full">Зарегистрироваться</button>
+        </form>
+
+        <p class="auth-link">Уже есть аккаунт? <a href="{{ url_for('login') }}">Войти</a></p>
+    </div>
+{% endblock %}

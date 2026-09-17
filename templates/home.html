@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Добро пожаловать{% endblock %}
+
+{% block content %}
+    <div class="home-container">
+        <div class="home-icon">📔</div>
+        <h1>Дневник</h1>
+        <p class="home-subtitle">Записывайте свои мысли и идеи</p>
+
+        <div class="home-buttons">
+            <a href="{{ url_for('login') }}" class="btn btn-primary">🔑 Войти</a>
+            <a href="{{ url_for('register') }}" class="btn btn-secondary">📝 Регистрация</a>
+        </div>
+    </div>
+{% endblock %}
